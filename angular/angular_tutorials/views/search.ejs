@@ -1,0 +1,33 @@
+<html ng-app="myApp">
+<head>
+	<title>search_filter</title>
+	<script type="text/javascript" src="../js/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("NameCtrl",function($scope,$http){
+			$http.get("/countries")
+			.success(function(response){
+				$scope.countries = response
+			})
+		})
+	</script>
+</head>
+<body>
+	<body ng-controller="NameCtrl">
+	<input ng-model="name" placeholder="search country name name" class="form-control">
+	<table class="table table-stripe">
+		<thead>
+			<th> <a href=""  ng-click="sortField='country'">COUNTRY</a></th>
+			<th> <a href="" ng-click="sortField='population'">POPULATION</a></th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="country in countries |orderBy:'sortField'| filter:name ">
+				<td>{{country.country}}</td>
+				<td>{{country.population}}</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</body>
+</html>

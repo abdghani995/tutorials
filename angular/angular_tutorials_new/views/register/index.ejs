@@ -1,0 +1,40 @@
+<html ng-app="register">
+<head>
+	<title>REGISTER</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<script type="text/javascript" src="/js/stock/angular.js"></script>
+	<script type="text/javascript" src="/js/advance/register_form.js"></script>
+</head>
+<body>
+	<div class="container">
+		<br><br><br><br>
+		<form name="form1" ng-controller="register_controller" ng-submit="form1.$valid && submit_form()">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2>REGISTER</h2>
+				</div>
+				<div class="panel-body" >
+					<form >
+						<div class="form-group">
+							<input type="text" name="name" class="form-control" ng-minlength="3" ng-control="name" placeholder="NAME" ng-model="user.name"  required>
+							<span ng-show="form1.name.$error.minlength">MIN NAME LENGTH = 3</span>
+						</div>
+						<div class="form-group">
+							<input type="text" name="email" class="form-control" ng-maxlength="10" ng-control="email" placeholder="EMAIL" ng-model="user.email" required>
+							<span ng-show="form1.email.$error.maxlength">MAX EMAIL LENGTH IS 30</span>
+						</div>
+						<div class="form-group">
+							<input type="password" name="email" class="form-control" ng-control="email" placeholder="PASSWORD" ng-model="user.password" required>
+						</div>
+						<div class="form-group">
+							<input type="password" name="email" class="form-control" ng-control="email" placeholder="CONFIRM PASSWORD" ng-model="user.passwordCnf" required>
+							<div ng-bind="passwordError"></div>
+						</div>
+						<button class="btn btn-danger" type="submit">REGISTER</button>
+					</form>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

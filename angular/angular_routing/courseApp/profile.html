@@ -1,0 +1,17 @@
+<h1>Profile</h1>
+
+
+hello {{currentUser.username}}
+
+<div ng-show="currentUser.role=='faculty'">
+	<h2>
+			Create Courses
+	</h2>
+
+</div>
+<div ng-show="currentUser.role=='student'">
+	<h2>
+			Register in courses
+	</h2>
+
+</div>

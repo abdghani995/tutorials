@@ -1,0 +1,22 @@
+<html ng-app="myApp">
+<head>
+	<title>watch angular</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('NameCtrl',function($scope){
+			$scope.fname="abdullah";
+			//used to make changes
+			$scope.$watch('lname',function(newVal,oldVal){
+				console.log("old value was :"+oldVal+" new value is "+newVal);
+			})
+		})
+	</script>
+</head>
+<body ng-controller="NameCtrl">
+	<input ng-model="fname" placeholder="fname" class="form-control">
+	<input ng-model="lname" placeholder="lname" class="form-control">
+	HEllo {{fname}} {{lname}}
+</body>
+</html>

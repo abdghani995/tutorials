@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		MY IMDB
+	</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="index.js" type="text/javascript"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body ng-app="myfilmsapiapp">
+	<div class="container" ng-controller="myfilmsapicontroller">
+		
+		<h1>SEARCH FOR A MOVIE</h1>
+		<input class="form-control .input-lg" ng-model="newMovie.name" />
+		<br>
+			<button ng-click="findmovie(newMovie)" class="btn btn-success span12 pagination-centered">
+					SEARCH
+			</button>
+		
+		
+		<br><br><br><br><br>
+		<table class="table table-stripe">
+			<tbody>
+				<tr >
+					<td><img src="{{movies.Poster}}"  class="img-rounded" alt="Cinque Terre" width="504" height="436"></td>
+					<td align="center"><h1>{{movies.Title}}</h1></td>
+				</tr>
+				<tr>
+					<td><h4>YEAR</h4></td>
+					<td>{{movies.Year}}</td>
+				</tr>
+				<tr>	
+					<td><h4>RATED</h4></td>
+					<td>{{movies.Rated}}</td>
+				</tr>
+				<tr>	
+					<td><h4>Released</h4></td>
+					<td>{{movies.Released}}</td>
+				</tr>
+				<tr>	
+					<td><h4>RUNTIME</h4></td>
+					<td>{{movies.Runtime}}</td>
+				</tr>
+				<tr>	
+					<td><h4>GENRE</h4></td>
+					<td>{{movies.Genre}}</td>
+				</tr>
+				<tr>	
+					<td><h4>DIRECTOR</h4></td>
+					<td>{{movies.Director}}</td>
+				</tr>
+				<tr>	
+					<td><h4>WRITER</h4></td>
+					<td>{{movies.Writer}}</td>
+				</tr>
+				<tr>
+					<td><h4>PLOT</h4></td>
+					<td>{{movies.Plot}}</td>
+				</tr>
+				<tr>
+					<td><h4>TITLE</h4></td>
+					<td>{{movies.Title}}</td>
+				</tr>
+				<tr>
+					<td><h4>AWARDS</h4></td>
+					<td>{{movies.Awards}}</td>
+				</tr>
+				<tr>
+					<td><h4>IMDB RATING</h4></td>
+					<td>{{movies.imdbRating}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
